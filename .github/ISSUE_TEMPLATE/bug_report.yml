@@ -1,11 +1,19 @@
 name: Bug report
-description: Create a report to help us improve
-labels: ["bug"]
+description: Report an issue or bug with this library
+labels: ['bug']
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report! If you have questions about using the OpenAI Python library, please post on our [Community forum](https://community.openai.com). 
+        Thanks for taking the time to fill out this bug report!
+  - type: checkboxes
+    id: non_api
+    attributes:
+      label: Confirm this is an issue with the Python library and not an underlying OpenAI API
+      description: Issues with the underlying OpenAI API should be reported on our [Developer Community](https://community.openai.com/c/api/7)
+      options:
+        - label: This is an issue with the Python library
+          required: true
   - type: textarea
     id: what-happened
     attributes:
@@ -44,13 +52,13 @@ body:
     id: language-version
     attributes:
       label: Python version
-      placeholder: Python v3.7.1
+      placeholder: Python v3.11.4
     validations:
       required: true
   - type: input
     id: lib-version
     attributes:
       label: Library version
-      placeholder: openai-python v0.26.4
+      placeholder: openai v1.0.1
     validations:
       required: true
